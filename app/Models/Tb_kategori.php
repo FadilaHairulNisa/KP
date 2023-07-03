@@ -5,18 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tb_kec extends Model
+class Tb_kategori extends Model
 {
     use HasFactory;
-    
-    public $table = 'tb_kec';
-    public $fillable = ['kode_kec', 'nama_kec', 'id_kab'];
+
+    public $table = 'table_kategori';
+    public $fillable = ['nama_kategori'];
     protected $timeStampe = false;
     protected $updated_at = null;
     protected $created_at = null;
-
-    public function kabupaten()
-    {
-        return $this->belongsTo(Tb_kab_kota::class, 'id_kab');
-    }
 }

@@ -16,6 +16,7 @@
             <th scope="col">#</th>
             <th scope="col">Kode Kecamatan</th>
             <th scope="col">Nama Kecamatan</th>
+            <th scope="col">Kabupaten</th>
             <th scope="col">Action</th>
 
         </tr>
@@ -27,9 +28,10 @@
             <td>{{ $loop->iteration }}</td>
             <td>{{ $item->kode_kec }}</td>
             <td>{{ $item->nama_kec }}</td>
+            <td>{{ $item->kabupaten->nama_kab }}</td>
             <td>
                 <div class="d-grid gap-2 d-md-block">
-                <a href='{{ url('/create/edit/'.$item->id) }}' class="ti ti-edit btn btn-warning btn-sm">Edit</a>
+                <a href='{{ url ('/ref_kec/edit/'.$item->id) }}' class="ti ti-edit btn btn-warning btn-sm">Edit</a>
                 <a class="ti ti-trash btn btn-danger btn-sm">Delete</a>
                 </div>
             </td>

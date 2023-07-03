@@ -59,17 +59,18 @@
                 <li><a class="dropdown-item" href="/ref_kota">Daftar Kabupaten/Kota</a></li>
                 <li><a class="dropdown-item" href="/ref_kec">Daftar Kecamatan</a></li>
                 <li><a class="dropdown-item" href="/ref_desa">Daftar Desa</a></li>
+                <li><a class="dropdown-item" href="/kategori">Daftar Kategori</a></li>
               </ul>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="/tabel_industri" aria-expanded="false">
+              <a class="sidebar-link" href="/data_produksi" aria-expanded="false">
                 <span>
                   <i class="ti ti-square"></i>
                 </span>
                 <span class="hide-menu">Data Produksi</span>
               </a>
             </li>
-            <li class="sidebar-item">
+            {{-- <li class="sidebar-item">
               <a class="sidebar-link" href="/status" aria-expanded="false">
                 <span>
                   <i class="ti ti-square"></i>
@@ -85,7 +86,7 @@
                 </span>
                 <span class="hide-menu">Laporan</span>
               </a>
-            </li>
+            </li> --}}
         </nav>
         <!-- End Sidebar navigation -->
       </div>
@@ -95,7 +96,7 @@
     <!--  Main wrapper -->
     <div class="body-wrapper">
       <!--  Header Start -->
-      <header class="app-header">
+      <header class="app-header card" >
         <nav class="navbar navbar-expand-lg navbar-light">
           <ul class="navbar-nav">
             <li class="nav-item d-block d-xl-none">
@@ -128,10 +129,13 @@
         </nav>
       </header>
       <!--  Header End -->
-      <div class="container-fluid">
-        @include('komponen.pesan')
-        @yield('content')
-      </div>
+
+        <div class="container-fluid">
+            @include('komponen.pesan')
+            @yield('content')
+        </div>
+
+
         <!--  Row 1 -->
   </div>
   <script src="{{ asset('libs/jquery/dist/jquery.min.js')}}"></script>

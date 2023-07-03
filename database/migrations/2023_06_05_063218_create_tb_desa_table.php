@@ -15,12 +15,15 @@ return new class extends Migration
     {
         Schema::create('tb_desa', function (Blueprint $table) {
             $table->id();
-
-            // $table->unsignedBigInteger('kec_id');
-            // $table->foreign('kec_id')->references('id')->on('tb_kec');
-
             $table->string('kode_desa');
             $table->string('nama_desa');
+            $table->unsignedBigInteger('id_kec');
+            $table->unsignedBigInteger('id_kab');
+
+            $table->foreign('id_kec')->references('id')->on('tb_kec');
+            $table->foreign('id_kab')->references('id')->on('tb_kab_kota');
+
+            
         });
     }
 

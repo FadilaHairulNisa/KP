@@ -10,12 +10,17 @@ class Tb_desa extends Model
     use HasFactory;
     public $table = 'tb_desa';
     public $fillable = ['kode_desa', 'nama_desa'];
-    protected $timeStampe = false;
+    public $timestamps = false;
     protected $updated_at = null;
     protected $created_at = null;
 
-    // public function kecamatan() 
-    // {
-    //     return $this->belongsTo(Tb_kec::class, 'kec_id');
-    // }
+    public function kec()
+    {
+        return $this->belongsTo(Tb_kec::class, 'id_kec', 'id');
+    }
+
+    public function kab()
+    {
+        return $this->belongsTo(Tb_kab_kota::class, 'id_kab', 'id');
+    }
 }

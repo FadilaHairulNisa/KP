@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tb_kec', function (Blueprint $table) {
+        Schema::create('table_kategori', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_kec');
-            $table->string('nama_kec');
-            $table->unsignedBigInteger('id_kab');
-
-            $table->foreign('id')->references('id')->on('tb_kab_kota');
+            $table->string('nama_kategori');
         });
     }
 
@@ -30,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_kec');
+        Schema::dropIfExists('table_kategori');
     }
 };
